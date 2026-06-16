@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лабиринт</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="viewport"></canvas>
+      <div id="atmosphere"></div>
+
+      <section id="menuPanel">
+        <h1>Лабиринт</h1>
+        <p class="subtitle">Сражения в лабиринте. Охота на врагов. Одна дверь на выход.</p>
+
+        <label for="playerName">Имя игрока</label>
+        <input id="playerName" maxlength="18" value="Игрок" />
+
+        <button id="createBtn" type="button">Создать игру</button>
+
+        <label for="roomCodeInput">Код для входа</label>
+        <div class="joinRow">
+          <input id="roomCodeInput" maxlength="5" placeholder="Код" />
+          <button id="joinBtn" type="button">Присоединиться</button>
+        </div>
+
+        <p id="statusLine">Создайте комнату или присоединитесь к существующей.</p>
+
+        <div class="tips">
+          <p>WASD — движение, мышь — взгляд, клик — выстрел.</p>
+          <p>Уничтожьте всех врагов, чтобы открыть дверь.</p>
+        </div>
+      </section>
+
+      <section id="hudPanel">
+        <div class="metric">
+          <span class="label">Здоровье</span>
+          <div class="healthTrack"><div id="healthFill"></div></div>
+          <span id="healthValue">100 HP</span>
+        </div>
+        <div class="metric mini">
+          <span class="label">Комната</span>
+          <span id="roomValue">----</span>
+        </div>
+        <div class="metric mini">
+          <span class="label">Враги</span>
+          <span id="enemiesValue">0</span>
+        </div>
+        <div class="metric mini">
+          <span class="label">Дверь</span>
+          <span id="doorValue">0%</span>
+        </div>
+      </section>
+
+      <section id="scorePanel">
+        <h2>Таблица игроков</h2>
+        <ul id="scoreList"></ul>
+      </section>
+
+      <section id="victoryOverlay">
+        <div class="victoryCard">
+          <h3 id="victoryTitle">Победа!</h3>
+          <p id="victoryText"></p>
+        </div>
+      </section>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
