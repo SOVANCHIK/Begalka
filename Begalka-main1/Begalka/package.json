@@ -1,0 +1,12 @@
+{
+  "name": "labirint-static",
+  "version": "1.0.0",
+  "description": "Статический прототип лабиринта",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
